@@ -24,6 +24,7 @@ var guessedLetters = document.getElementById("guessed-letters");
 var currentWord = document.getElementById("current-word");
 var answerText= document.getElementById("answer");
 
+function hideGifs() {
 document.getElementById("gamoragif").style.display = "none"
 document.getElementById("starlordgif").style.display = "none"
 document.getElementById("draxgif").style.display = "none"
@@ -31,6 +32,9 @@ document.getElementById("rocketgif").style.display = "none"
 document.getElementById("grootgif").style.display = "none"
 document.getElementById("yondugif").style.display = "none"
 document.getElementById("nebulagif").style.display = "none"
+document.getElementById("thanosgif").style.display = "none"
+document.getElementById("ronangif").style.display = "none"
+}
 
 function youGuessed() {
     guessedLetters.textContent = "You Guessed:" + userLetters.join(" ")
@@ -52,6 +56,7 @@ for (let i = 0; i < splitWords.length; i++) {
 }
 };
 
+hideGifs()
 newGame()
 
 document.onkeyup = function (event) {
@@ -68,67 +73,40 @@ document.onkeyup = function (event) {
         if (wordToGuess.indexOf("_")=== -1){//if word is complete
             wins++;
             if ((splitWords.join('')) === lettersList[4]) {
-            document.getElementById("gamoragif").style.display = "block"
-            document.getElementById("starlordgif").style.display = "none"
-            document.getElementById("draxgif").style.display = "none"
-            document.getElementById("rocketgif").style.display = "none"
-            document.getElementById("grootgif").style.display = "none"
-            document.getElementById("yondugif").style.display = "none"
-            document.getElementById("nebulagif").style.display = "none"
+                hideGifs();
+                document.getElementById("gamoragif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[3]) {
-            document.getElementById("gamoragif").style.display = "none"
-            document.getElementById("starlordgif").style.display = "block"
-            document.getElementById("draxgif").style.display = "none"
-            document.getElementById("rocketgif").style.display = "none"
-            document.getElementById("grootgif").style.display = "none"
-            document.getElementById("yondugif").style.display = "none"
-            document.getElementById("nebulagif").style.display = "none"
+                hideGifs()
+                document.getElementById("starlordgif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[0]) {
-            document.getElementById("gamoragif").style.display = "none"
-            document.getElementById("starlordgif").style.display = "none"
-            document.getElementById("draxgif").style.display = "block"
-            document.getElementById("rocketgif").style.display = "none"
-            document.getElementById("grootgif").style.display = "none"
-            document.getElementById("yondugif").style.display = "none"
-            document.getElementById("nebulagif").style.display = "none"
+                hideGifs()
+                document.getElementById("draxgif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[1]) {
-            document.getElementById("gamoragif").style.display = "none"
-            document.getElementById("starlordgif").style.display = "none"
-            document.getElementById("draxgif").style.display = "none"
-            document.getElementById("rocketgif").style.display = "block"
-            document.getElementById("grootgif").style.display = "none"
-            document.getElementById("yondugif").style.display = "none"
-            document.getElementById("nebulagif").style.display = "none"
+                hideGifs()
+                document.getElementById("rocketgif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[2]) {
-            document.getElementById("gamoragif").style.display = "none"
-            document.getElementById("starlordgif").style.display = "none"
-            document.getElementById("draxgif").style.display = "none"
-            document.getElementById("rocketgif").style.display = "none"
-            document.getElementById("grootgif").style.display = "block"
-            document.getElementById("yondugif").style.display = "none"
-            document.getElementById("nebulagif").style.display = "none"
+                hideGifs()
+                document.getElementById("grootgif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[5]) {
-            document.getElementById("gamoragif").style.display = "none"
-            document.getElementById("starlordgif").style.display = "none"
-            document.getElementById("draxgif").style.display = "none"
-            document.getElementById("rocketgif").style.display = "none"
-            document.getElementById("grootgif").style.display = "none"
-            document.getElementById("yondugif").style.display = "block"
-            document.getElementById("nebulagif").style.display = "none"
+                hideGifs()
+                document.getElementById("yondugif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[6]) {
-            document.getElementById("gamoragif").style.display = "none"
-            document.getElementById("starlordgif").style.display = "none"
-            document.getElementById("draxgif").style.display = "none"
-            document.getElementById("rocketgif").style.display = "none"
-            document.getElementById("grootgif").style.display = "none"
-            document.getElementById("yondugif").style.display = "none"
-            document.getElementById("nebulagif").style.display = "block"
+                hideGifs()
+                document.getElementById("nebulagif").style.display = "block"
+            }
+            if ((splitWords.join('')) === lettersList[7]) {
+                hideGifs()
+                document.getElementById("ronangif").style.display = "block"
+            }
+            if ((splitWords.join('')) === lettersList[8]) {
+                hideGifs()
+                document.getElementById("thanosgif").style.display = "block"
             }
             answerWas();
             beginGameAgain();
