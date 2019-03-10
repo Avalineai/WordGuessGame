@@ -27,10 +27,10 @@ var answerText= document.getElementById("answer");
 document.getElementById("gamoragif").style.display = "none"
 document.getElementById("starlordgif").style.display = "none"
 document.getElementById("draxgif").style.display = "none"
-//document.getElementById("").style.display = "none"
-//document.getElementById("").style.display = "none"
-//document.getElementById("").style.display = "none"
-//document.getElementById("").style.display = "none"
+document.getElementById("rocketgif").style.display = "none"
+document.getElementById("grootgif").style.display = "none"
+document.getElementById("yondugif").style.display = "none"
+document.getElementById("nebulagif").style.display = "none"
 
 function youGuessed() {
     guessedLetters.textContent = "You Guessed:" + userLetters.join(" ")
@@ -71,16 +71,64 @@ document.onkeyup = function (event) {
             document.getElementById("gamoragif").style.display = "block"
             document.getElementById("starlordgif").style.display = "none"
             document.getElementById("draxgif").style.display = "none"
+            document.getElementById("rocketgif").style.display = "none"
+            document.getElementById("grootgif").style.display = "none"
+            document.getElementById("yondugif").style.display = "none"
+            document.getElementById("nebulagif").style.display = "none"
             }
             if ((splitWords.join('')) === lettersList[3]) {
             document.getElementById("gamoragif").style.display = "none"
             document.getElementById("starlordgif").style.display = "block"
             document.getElementById("draxgif").style.display = "none"
+            document.getElementById("rocketgif").style.display = "none"
+            document.getElementById("grootgif").style.display = "none"
+            document.getElementById("yondugif").style.display = "none"
+            document.getElementById("nebulagif").style.display = "none"
             }
             if ((splitWords.join('')) === lettersList[0]) {
             document.getElementById("gamoragif").style.display = "none"
             document.getElementById("starlordgif").style.display = "none"
             document.getElementById("draxgif").style.display = "block"
+            document.getElementById("rocketgif").style.display = "none"
+            document.getElementById("grootgif").style.display = "none"
+            document.getElementById("yondugif").style.display = "none"
+            document.getElementById("nebulagif").style.display = "none"
+            }
+            if ((splitWords.join('')) === lettersList[1]) {
+            document.getElementById("gamoragif").style.display = "none"
+            document.getElementById("starlordgif").style.display = "none"
+            document.getElementById("draxgif").style.display = "none"
+            document.getElementById("rocketgif").style.display = "block"
+            document.getElementById("grootgif").style.display = "none"
+            document.getElementById("yondugif").style.display = "none"
+            document.getElementById("nebulagif").style.display = "none"
+            }
+            if ((splitWords.join('')) === lettersList[2]) {
+            document.getElementById("gamoragif").style.display = "none"
+            document.getElementById("starlordgif").style.display = "none"
+            document.getElementById("draxgif").style.display = "none"
+            document.getElementById("rocketgif").style.display = "none"
+            document.getElementById("grootgif").style.display = "block"
+            document.getElementById("yondugif").style.display = "none"
+            document.getElementById("nebulagif").style.display = "none"
+            }
+            if ((splitWords.join('')) === lettersList[5]) {
+            document.getElementById("gamoragif").style.display = "none"
+            document.getElementById("starlordgif").style.display = "none"
+            document.getElementById("draxgif").style.display = "none"
+            document.getElementById("rocketgif").style.display = "none"
+            document.getElementById("grootgif").style.display = "none"
+            document.getElementById("yondugif").style.display = "block"
+            document.getElementById("nebulagif").style.display = "none"
+            }
+            if ((splitWords.join('')) === lettersList[6]) {
+            document.getElementById("gamoragif").style.display = "none"
+            document.getElementById("starlordgif").style.display = "none"
+            document.getElementById("draxgif").style.display = "none"
+            document.getElementById("rocketgif").style.display = "none"
+            document.getElementById("grootgif").style.display = "none"
+            document.getElementById("yondugif").style.display = "none"
+            document.getElementById("nebulagif").style.display = "block"
             }
             answerWas();
             beginGameAgain();
