@@ -12,9 +12,14 @@ var loseText = document.getElementById("losses-text");
 var guessesText = document.getElementById("guesses-left");
 var guessedLetters = document.getElementById("guessed-letters");
 var currentWord = document.getElementById("current-word");
+var answerText= document.getElementById("answer");
 
 function youGuessed() {
     guessedLetters.textContent = "You Guessed:" + userLetters.join(" ")
+}
+
+function answerWas() {
+    answerText.textContent = "The Answer Was: " + splitWords.join('')
 }
 
 function newGame() {
@@ -26,7 +31,6 @@ console.log(splitWords)
 for (let i = 0; i < splitWords.length; i++) {
     wordToGuess.push("_")
     console.log(wordToGuess)
-    
 }
 }
 
@@ -45,6 +49,7 @@ document.onkeyup = function (event) {
         }
         if (wordToGuess.indexOf("_")=== -1){//if word is complete
             wins++;
+            answerWas();
             //print text content of answer- wins
             beginGameAgain();
         }
@@ -56,6 +61,7 @@ document.onkeyup = function (event) {
     }
     if (guessLeft === 0) {
         losses++;
+        answerWas();
         //print text content of answer-loss
         beginGameAgain();
     }

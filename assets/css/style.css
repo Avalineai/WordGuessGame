@@ -2,7 +2,27 @@
     letter-spacing: 7px;
     color: #fafcff;
     background-color: #080808;
+    animation: 3000ms ease-in-out infinite bgchange;
 }
 #current-word {
     text-transform: uppercase;
+}
+
+#answer {
+    text-transform: capitalize;
+}
+
+@keyframes bgchange {
+    0% {
+    background-color: #000000;
+    }
+    30% {
+    background-color: #00001a;
+    }
+    60% {
+    background-color: #000016;
+    }
+    100% {
+    background-color: #000000;
+    }
 }
