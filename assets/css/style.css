@@ -1,0 +1,8 @@
+#gameFont {
+    letter-spacing: 7px;
+    color: #fafcff;
+    background-color: #080808;
+}
+#current-word {
+    text-transform: uppercase;
+}
