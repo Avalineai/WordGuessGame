@@ -1,4 +1,14 @@
-var lettersList = ["drax", "rocket", "groot", "starlord", "gamora", "yondu", "nebula", "ronan", "thanos", "collector"]
+function run() {
+}
+if (document.readyState!='loading') run();
+else if (document.addEventListener) document.addEventListener('DOMContentLoaded', run);
+else document.attachEvent('onreadystatechange', function(){
+    if (document.readyState=='complete') run();
+});
+
+run();
+
+var lettersList = ["drax", "rocket", "groot", "starlord", "gamora", "yondu", "nebula", "ronan", "thanos"]
 
 var wins = 0
 var losses = 0
@@ -14,13 +24,21 @@ var guessedLetters = document.getElementById("guessed-letters");
 var currentWord = document.getElementById("current-word");
 var answerText= document.getElementById("answer");
 
+document.getElementById("gamoragif").style.display = "none"
+document.getElementById("starlordgif").style.display = "none"
+document.getElementById("draxgif").style.display = "none"
+//document.getElementById("").style.display = "none"
+//document.getElementById("").style.display = "none"
+//document.getElementById("").style.display = "none"
+//document.getElementById("").style.display = "none"
+
 function youGuessed() {
     guessedLetters.textContent = "You Guessed:" + userLetters.join(" ")
-}
+};
 
 function answerWas() {
     answerText.textContent = "The Answer Was: " + splitWords.join('')
-}
+};
 
 function newGame() {
 var lettersListRand = lettersList[Math.floor(Math.random() * lettersList.length)];
@@ -32,7 +50,7 @@ for (let i = 0; i < splitWords.length; i++) {
     wordToGuess.push("_")
     console.log(wordToGuess)
 }
-}
+};
 
 newGame()
 
@@ -49,8 +67,22 @@ document.onkeyup = function (event) {
         }
         if (wordToGuess.indexOf("_")=== -1){//if word is complete
             wins++;
+            if ((splitWords.join('')) === lettersList[4]) {
+            document.getElementById("gamoragif").style.display = "block"
+            document.getElementById("starlordgif").style.display = "none"
+            document.getElementById("draxgif").style.display = "none"
+            }
+            if ((splitWords.join('')) === lettersList[3]) {
+            document.getElementById("gamoragif").style.display = "none"
+            document.getElementById("starlordgif").style.display = "block"
+            document.getElementById("draxgif").style.display = "none"
+            }
+            if ((splitWords.join('')) === lettersList[0]) {
+            document.getElementById("gamoragif").style.display = "none"
+            document.getElementById("starlordgif").style.display = "none"
+            document.getElementById("draxgif").style.display = "block"
+            }
             answerWas();
-            //print text content of answer- wins
             beginGameAgain();
         }
     }
@@ -62,7 +94,6 @@ document.onkeyup = function (event) {
     if (guessLeft === 0) {
         losses++;
         answerWas();
-        //print text content of answer-loss
         beginGameAgain();
     }
 
@@ -71,6 +102,7 @@ document.onkeyup = function (event) {
     guessesText.textContent = "Guesses Left: " + guessLeft;
     currentWord.textContent = wordToGuess.join(" ")
 };
+
 
 function beginGameAgain() {
     guessLeft = 10
