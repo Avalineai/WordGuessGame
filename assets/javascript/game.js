@@ -120,6 +120,7 @@ document.onkeyup = function (event) {
     if (guessLeft === 0) {
         losses++;
         answerWas();
+        hideGifs()
         beginGameAgain();
     }
 
