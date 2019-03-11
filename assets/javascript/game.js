@@ -53,6 +53,7 @@ console.log(splitWords)
 for (let i = 0; i < splitWords.length; i++) {
     wordToGuess.push("_")
     console.log(wordToGuess)
+    currentWord.textContent = wordToGuess.join(" ")
 }
 };
 
@@ -127,7 +128,7 @@ document.onkeyup = function (event) {
     winsText.textContent = "Wins: " + wins;
     loseText.textContent = "Losses: " + losses;
     guessesText.textContent = "Guesses Left: " + guessLeft;
-    currentWord.textContent = wordToGuess.join(" ")
+    
 };
 
 
