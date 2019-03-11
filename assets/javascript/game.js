@@ -36,6 +36,11 @@ document.getElementById("thanosgif").style.display = "none"
 document.getElementById("ronangif").style.display = "none"
 }
 
+
+function focus() {
+document.getElementById('current-word').focus();
+}
+
 function youGuessed() {
     guessedLetters.textContent = "You Guessed:" + userLetters.join(" ")
 };
@@ -58,6 +63,7 @@ for (let i = 0; i < splitWords.length; i++) {
 
 hideGifs()
 newGame()
+focus()
 
 document.onkeyup = function (event) {
     var userGuess = event.key.toLowerCase();
@@ -137,5 +143,6 @@ function beginGameAgain() {
     splitWords = []
     wordToGuess = []
 newGame()
+focus()
 youGuessed()
 }
