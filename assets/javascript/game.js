@@ -65,8 +65,14 @@ for (let i = 0; i < splitWords.length; i++) {
 hideGifs()
 newGame()
 
+// document.getElementById('startButton').addEventListener('click', function (event){
+//     event.preventDefault();
+//     document.getElementById('game-text').style.display = "block"
+//     console.log("this is a test")
+// })
 document.onkeyup = function (event) {
     document.getElementById("key-inst").style.display="none"
+    // document.getElementById("startButton").style.display="none"
     var userGuess = event.key.toLowerCase();
 
     if (splitWords.indexOf(userGuess) > -1 ) {
