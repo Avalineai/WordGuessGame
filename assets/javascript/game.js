@@ -10,6 +10,10 @@ run();
 
 var lettersList = ["drax", "rocket", "groot", "starlord", "gamora", "yondu", "nebula", "ronan", "thanos"]
 
+var gifObjectArray = [ {name : "starlord", src: "https://media1.tenor.com/images/d5b9fa46b027988f9a973c0c031dd305/tenor.gif?itemid=8751846"}, {name : "gamora", src: "https://media.giphy.com/media/Vq8cEuhypGuWY/giphy.gif"}]
+console.log(gifObjectArray[0].name)
+console.log(gifObjectArray[0].src)
+
 var wins = 0
 var losses = 0
 var guessLeft = 10
@@ -24,6 +28,8 @@ var guessedLetters = document.getElementById("guessed-letters");
 var currentWord = document.getElementById("current-word");
 var answerText= document.getElementById("answer");
 
+
+
 function hideGifs() {
 document.getElementById("gamoragif").style.display = "none"
 document.getElementById("starlordgif").style.display = "none"
@@ -34,11 +40,6 @@ document.getElementById("yondugif").style.display = "none"
 document.getElementById("nebulagif").style.display = "none"
 document.getElementById("thanosgif").style.display = "none"
 document.getElementById("ronangif").style.display = "none"
-}
-
-
-function focus() {
-document.getElementById('current-word').focus();
 }
 
 function youGuessed() {
@@ -63,9 +64,9 @@ for (let i = 0; i < splitWords.length; i++) {
 
 hideGifs()
 newGame()
-focus()
 
 document.onkeyup = function (event) {
+    document.getElementById("key-inst").style.display="none"
     var userGuess = event.key.toLowerCase();
 
     if (splitWords.indexOf(userGuess) > -1 ) {
@@ -79,7 +80,7 @@ document.onkeyup = function (event) {
         if (wordToGuess.indexOf("_")=== -1){//if word is complete
             wins++;
             if ((splitWords.join('')) === lettersList[4]) {
-                hideGifs();
+                hideGifs()
                 document.getElementById("gamoragif").style.display = "block"
             }
             if ((splitWords.join('')) === lettersList[3]) {
@@ -143,6 +144,5 @@ function beginGameAgain() {
     splitWords = []
     wordToGuess = []
 newGame()
-focus()
 youGuessed()
 }
